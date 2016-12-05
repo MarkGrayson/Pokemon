@@ -29,6 +29,7 @@ public class PokemonPanel extends JPanel
 	private JTextArea advancedArea;
 	
 	public PokemonPanel(PokemonController baseController)
+
 {
 	this.baseController = baseController;
 	this.baseLayout = new SpringLayout();
@@ -48,11 +49,49 @@ public class PokemonPanel extends JPanel
 	this.numberLabel = new JLabel("Pokemon Number:");
 	this.nameLabel = new JLabel("My name is:");
 	this.pokemonLabel = new JLabel("The current pokemon", pokemonIcon, JLabel.CENTER);
-}
+
 	
 	setupPanel();
 	setupLayout();
 	setupListeners();
 	
-
 }
+}
+
+
+private void setupPanel()
+{  }
+
+private void setupLayout()
+{  }
+
+private void setupDropdown()
+{  }
+
+private void setupListeners()
+{  }
+
+private void changeColorBasedOnData(String data)
+{
+	if (data.contains("Electric"))
+	{
+		this.setBackground(Color.YELLOW);
+	}
+	else if (data.contains("Fire"))
+	{
+		this.setBackground(Color.RED);
+	}
+	
+}
+
+private void changeImageDisplay(String name)
+{  }
+
+private boolean isValidDouble(String input)
+{  }
+
+private boolean isValidInteger(String input)
+{  }
+
+private boolean isValidName(String name)
+{  }
