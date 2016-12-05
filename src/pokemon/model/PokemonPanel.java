@@ -69,7 +69,23 @@ private void setupDropdown()
 {  }
 
 private void setupListeners()
-{  }
+{ 
+	pokedexSelector.addActionListener(new ActionListener()
+	{
+		public void actionPerformed(ActionEvent selection)
+		{
+			int selected = pokedexSelector.getSelectedIndex();
+			nameField.setText(baseController.getPokedex().get(selected).getName());
+			numberField.setText(baseController.getPokedex(selected).getNumber() + "");
+			combatField.setText(baseController.getPokedex().get(selected).getAttackPoints() + "");
+			speedField.setText(baseController.getPokedex().get(selected).getSpeed() + "");
+			healthField.setText(baseController.getPokedex().get(selected).getHealthPoints() + "");
+			advancedArea.setText(baseController.getPokedex().get(selected).getPokemonInformation()
+					+ "\n\n" + baseController.getPokedex().get(selected).getPokemonTypes());
+			
+		}
+	}
+}
 
 private void changeColorBasedOnData(String data)
 {
@@ -81,11 +97,33 @@ private void changeColorBasedOnData(String data)
 	{
 		this.setBackground(Color.RED);
 	}
+	else if (data.contains("Flying"))
+	{
+		this.setBackground(Color.MAGENTA);
+	}
+	else if (data.contains("Ground"))
+	{
+		this.setBackground(Color.GRAY);
+	}
 	
 }
 
 private void changeImageDisplay(String name)
-{  }
+{ 
+	String path = "/poke/view/images/";
+	String defaultName = "/ultraball";
+	String extension = ".png";
+	try
+	{
+		pokemonIcon = new ImageIcon(getClass().getResource(path + name + extension));
+	}
+	catch (NullPointerException missingFile)
+	{
+		pokemonIcon = new ImageIcon(getClass().getResource(path + defaultName + extension));
+	}
+	pokemonLabel.setIcon(pokemonIcon);
+	repaint();
+}
 
 private boolean isValidDouble(String input)
 {  }
