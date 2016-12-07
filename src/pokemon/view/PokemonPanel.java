@@ -1,4 +1,4 @@
-package pokemon.model;
+package pokemon.view;
 
 import java.awt.Color;
 import javax.swing.*;
@@ -56,7 +56,7 @@ public class PokemonPanel extends JPanel
 	setupListeners();
 	
 }
-}
+
 
 
 private void setupPanel()

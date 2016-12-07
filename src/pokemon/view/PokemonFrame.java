@@ -1,4 +1,4 @@
-package pokemon.model;
+package pokemon.view;
 
 public class PokemonFrame {
 
