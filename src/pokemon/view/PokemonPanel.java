@@ -4,8 +4,7 @@ import java.awt.Color;
 import javax.swing.*;
 import pokemon.controller.PokemonController;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class PokemonPanel extends JPanel
 {
@@ -29,6 +28,9 @@ public class PokemonPanel extends JPanel
 	private JTextArea advancedArea;
 	
 	public PokemonPanel(PokemonController baseController)
+	
+	private void setupPanel()
+	{  
 
 {
 	this.baseController = baseController;
@@ -50,7 +52,7 @@ public class PokemonPanel extends JPanel
 	this.nameLabel = new JLabel("My name is:");
 	this.pokemonLabel = new JLabel("The current pokemon", pokemonIcon, JLabel.CENTER);
 
-	
+}
 	setupPanel();
 	setupLayout();
 	setupListeners();
@@ -59,8 +61,7 @@ public class PokemonPanel extends JPanel
 
 
 
-private void setupPanel()
-{  }
+
 
 private void setupLayout()
 {  }
@@ -70,13 +71,13 @@ private void setupDropdown()
 
 private void setupListeners()
 { 
-	pokedexSelector.addActionListener(new ActionListener()
+	pokedexSelecter.addActionListener(new ActionListener()
 	{
 		public void actionPerformed(ActionEvent selection)
 		{
-			int selected = pokedexSelector.getSelectedIndex();
+			int selected = pokedexSelecter.getSelectedIndex();
 			nameField.setText(baseController.getPokedex().get(selected).getName());
-			numberField.setText(baseController.getPokedex(selected).getNumber() + "");
+			numberField.setText(baseController.getPokedex().get(selected).getNumber() + "");
 			combatField.setText(baseController.getPokedex().get(selected).getAttackPoints() + "");
 			speedField.setText(baseController.getPokedex().get(selected).getSpeed() + "");
 			healthField.setText(baseController.getPokedex().get(selected).getHealthPoints() + "");
@@ -84,7 +85,17 @@ private void setupListeners()
 					+ "\n\n" + baseController.getPokedex().get(selected).getPokemonTypes());
 			
 		}
-	}
+	});
+	
+	
+	
+}
+
+private void setRandomColor()
+{
+	int red = (int) (Math.random() * 256);
+	int green = (int) (Math.random() * 256);
+	int blue = (int) (Math.random() * 256);
 }
 
 private void changeColorBasedOnData(String data)

@@ -1,9 +1,11 @@
 package pokemon.controller;
 
 import pokemon.model.Pokemon;
+import java.util.ArrayList;
 
 public class PokemonController 
 {
+	private ArrayList<Pokemon>pokedex;
 	public void start()
 	{
 		
