@@ -1,12 +1,12 @@
-package poke.tests;
+package poke.test;
 
 import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import poke.controller.PokemonController;
-import poke.view.PokemonPanel;
+import pokemon.controller.PokemonController;
+import pokemon.view.PokemonPanel;
 
 
 public class PanelTest

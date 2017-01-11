@@ -2,10 +2,12 @@ package pokemon.controller;
 
 import pokemon.model.Pokemon;
 import java.util.ArrayList;
+import pokemon.view.PokemonFrame;
 
 public class PokemonController 
 {
 	private ArrayList<Pokemon>pokedex;
+	private PokemonFrame baseFrame;
 	public void start()
 	{
 		

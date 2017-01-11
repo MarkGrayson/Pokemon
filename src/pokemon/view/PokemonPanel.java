@@ -28,6 +28,8 @@ public class PokemonPanel extends JPanel
 	private JTextArea advancedArea;
 	
 	public PokemonPanel(PokemonController baseController)
+	{
+	}
 	
 	private void setupPanel()
 	{  
@@ -144,3 +146,4 @@ private boolean isValidInteger(String input)
 
 private boolean isValidName(String name)
 {  }
+}
