@@ -5,6 +5,10 @@ import javax.swing.*;
 import pokemon.controller.PokemonController;
 import java.awt.Dimension;
 import java.awt.event.*;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 public class PokemonPanel extends JPanel
 {
@@ -29,7 +33,7 @@ public class PokemonPanel extends JPanel
 	
 	public PokemonPanel(PokemonController baseController)
 	{
-	}
+	
 	
 	private void setupPanel()
 	{  
@@ -86,7 +90,37 @@ private void setupListeners()
 			advancedArea.setText(baseController.getPokedex().get(selected).getPokemonInformation()
 					+ "\n\n" + baseController.getPokedex().get(selected).getPokemonTypes());
 			
+						}
+		
+			});
+	
+		updateButton.addActionListener(new ActionListener()
+						{
+		public void actionPerformed(ActionEvent click)
+		{
+			
 		}
+						});
+	
+		this.addMouseListener(new MouseListener()
+						{
+		
+						});
+	
+		this.addMouseMotionListener(new MouseMotionListener()
+		{
+				public void mouseDragged(MouseEvent dragged)
+				{
+						setRandomColor();
+				}
+		
+				public void mouseMoved(MouseEvent moved)
+				{
+						if((Math.abs(moved.getX() - updateButton.getX() < 5) || (Math.abs(moved.getY() - updateButton.getY())
+								{
+										updateButton.setLocation(Moved.getX() + 10, moved.getY() - 10 );
+								}
+				}
 	});
 	
 	
