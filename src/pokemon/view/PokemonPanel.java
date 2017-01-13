@@ -33,39 +33,35 @@ public class PokemonPanel extends JPanel
 	
 	public PokemonPanel(PokemonController baseController)
 	{
+		this.baseController = baseController;
+		this.baseLayout = new SpringLayout();
+		this.pokemonIcon = new ImageIcon(getClass().getResource("/poke/view/images/pokeball.png"));
+		this.updateButton = new JButton("Update the stats!");
+		this.nameField = new JTextField(25);
+		this.combatField = new JTextField(5);
+		this.healthField = new JTextField(5);
+		this.speedField = new JTextField(5);
+		this.numberField = new JTextField(5);
+		this.advancedArea = new JTextArea(10,25);
+		this.pokedexSelecter = new JComboBox(new String[] {"Pickachu","Arcanine","Charizard","Pidgeot","Diglett"});
+		this.advancedLabel = new JLabel("Advanced infromation");
+		this.combatLabel = new JLabel("Combat Points:");
+		this.healthLabel = new JLabel("Health Points:");
+		this.speedLabel = new JLabel("Speed Rate");
+		this.numberLabel = new JLabel("Pokemon Number:");
+		this.nameLabel = new JLabel("My name is:");
+		this.pokemonLabel = new JLabel("The current pokemon", pokemonIcon, JLabel.CENTER);
+
+		setupPanel();
+		setupLayout();
+		setupListeners();
+		
+	}
 	
 	
 	private void setupPanel()
-	{  
-
-{
-	this.baseController = baseController;
-	this.baseLayout = new SpringLayout();
-	this.pokemonIcon = new ImageIcon(getClass().getResource("/poke/view/images/pokeball.png"));
-	this.updateButton = new JButton("Update the stats!");
-	this.nameField = new JTextField(25);
-	this.combatField = new JTextField(5);
-	this.healthField = new JTextField(5);
-	this.speedField = new JTextField(5);
-	this.numberField = new JTextField(5);
-	this.advancedArea = new JTextArea(10,25);
-	this.pokedexSelecter = new JComboBox(new String[] {"Pickachu","Arcanine","Charizard","Pidgeot","Diglett"});
-	this.advancedLabel = new JLabel("Advanced infromation");
-	this.combatLabel = new JLabel("Combat Points:");
-	this.healthLabel = new JLabel("Health Points:");
-	this.speedLabel = new JLabel("Speed Rate");
-	this.numberLabel = new JLabel("Pokemon Number:");
-	this.nameLabel = new JLabel("My name is:");
-	this.pokemonLabel = new JLabel("The current pokemon", pokemonIcon, JLabel.CENTER);
-
-}
-	setupPanel();
-	setupLayout();
-	setupListeners();
-	
-}
-
-
+	{
+	}
 
 
 
@@ -102,26 +98,26 @@ private void setupListeners()
 		}
 						});
 	
-		this.addMouseListener(new MouseListener()
-						{
-		
-						});
-	
-		this.addMouseMotionListener(new MouseMotionListener()
-		{
-				public void mouseDragged(MouseEvent dragged)
-				{
-						setRandomColor();
-				}
-		
-				public void mouseMoved(MouseEvent moved)
-				{
-						if((Math.abs(moved.getX() - updateButton.getX() < 5) || (Math.abs(moved.getY() - updateButton.getY())
-								{
-										updateButton.setLocation(Moved.getX() + 10, moved.getY() - 10 );
-								}
-				}
-	});
+//		this.addMouseListener(new MouseListener()
+//						{
+//		
+//						});
+//	
+//		this.addMouseMotionListener(new MouseMotionListener()
+//		{
+//				public void mouseDragged(MouseEvent dragged)
+//				{
+//						setRandomColor();
+//				}
+//		
+//				public void mouseMoved(MouseEvent moved)
+//				{
+//						if((Math.abs(moved.getX() - updateButton.getX() < 5) || (Math.abs(moved.getY() - updateButton.getY())
+//								{
+//										updateButton.setLocation(Moved.getX() + 10, moved.getY() - 10 );
+//								}
+//				}
+//	});
 	
 	
 	
